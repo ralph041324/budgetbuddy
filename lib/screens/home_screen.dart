@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import '../services/auth_service.dart';
+import 'budget_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -34,7 +35,7 @@ class HomeScreen extends StatelessWidget {
               children: [
                 Text('Welcome, $name!', style: const TextStyle(fontSize: 24)),
                 const SizedBox(height: 8),
-                Text(user.email ?? ''),
+                Text(user.email ?? ''),          
               ],
             );
           },
