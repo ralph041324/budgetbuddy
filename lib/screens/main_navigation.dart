@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'add_expense_screen.dart';
 import 'budget_screen.dart';
 import 'home_screen.dart';
 
-/// Shown right after login. Opens on the Budget tab.
+/// Shown right after login. Tabs: Home, Budget, Add Expense.
 /// Teammates can add their tabs (Expenses, Summary, ...) to _pages
 /// and _destinations below.
 class MainNavigation extends StatefulWidget {
@@ -13,15 +14,16 @@ class MainNavigation extends StatefulWidget {
 }
 
 class _MainNavigationState extends State<MainNavigation> {
-  int _index = 0; // 0 = Budget, so it shows first after login
+  int _index = 0; // 0 = Home
 
   final List<Widget> _pages = const [
     HomeScreen(), // profile / logout
-     BudgetScreen(),
+    BudgetScreen(),
+    AddExpenseScreen(),
   ];
 
   final List<NavigationDestination> _destinations = const [
-     NavigationDestination(
+    NavigationDestination(
       icon: Icon(Icons.person_outline),
       selectedIcon: Icon(Icons.home),
       label: 'Home',
@@ -31,7 +33,11 @@ class _MainNavigationState extends State<MainNavigation> {
       selectedIcon: Icon(Icons.account_balance_wallet),
       label: 'Budget',
     ),
-   
+    NavigationDestination(
+      icon: Icon(Icons.add_circle_outline),
+      selectedIcon: Icon(Icons.add_circle),
+      label: 'Add Expense',
+    ),
   ];
 
   @override

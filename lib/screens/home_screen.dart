@@ -35,7 +35,7 @@ class HomeScreen extends StatelessWidget {
               children: [
                 Text('Welcome, $name!', style: const TextStyle(fontSize: 24)),
                 const SizedBox(height: 8),
-                Text(user.email ?? ''),          
+                Text(user.email ?? ''),
               ],
             );
           },
